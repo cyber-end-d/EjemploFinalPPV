@@ -1,3 +1,7 @@
+# hay ciertos conceptos del POO que no se utilizan y podrian mejorar el programa
+# como polimorfismo o delegacion (no se delega a clases inferiores)
+# ademas el codigo esta muy acoplado
+
 class Pasaje:
     def __init__(self, cliente):
         self.cl = cliente

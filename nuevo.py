@@ -1,10 +1,24 @@
+import datetime
+
 class Pasaje:
     def __init__(self, cliente):
         self.cliente = cliente
 
     def precio(self):
-        return self.cliente.calcular_precio()
+        if self.is_invierno():
+            return self.cliente.calcular_precio() * 0.1
+        else:
+            return self.cliente.calcular_precio()
 
+    def is_invierno(self):
+        if datetime.date.today().month in [7,8]:
+            return True
+        if datetime.date.today().month == 6 and datetime.date.today().day > 20:
+            return True
+        if datetime.date.today().month == 9 and datetime.date.today().day < 20:
+            return True
+        else:
+            return False
 
 class Cliente:
     def __init__(self):
